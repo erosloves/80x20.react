@@ -3,7 +3,7 @@
 }
 .card_wrapper {
   display: grid;
-  justify-content: space-between;
+  justify-content: start;
   grid-template-columns: repeat(auto-fit, 300px);
   gap: 20px;
 }
@@ -16,23 +16,27 @@
   width: 300px;
   height: 300px;
   cursor: pointer;
+  background-image: url("/cards/card-bg.png");
 }
 
 .card .title {
-  font-size: 35px;
+  font-size: 25px;
   z-index: 3;
   text-align: center;
-  color: #eee;
+  color: #222;
 }
 
-.card_layout {
+.card_logo {
   position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.616);
+  z-index: 3;
+  top: 10px;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  background-image: url("/cards/card-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .card .img {
@@ -48,7 +52,7 @@
 
 .PresentationLayout {
   position: fixed;
-  z-index: 5;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100vw;
@@ -58,16 +62,48 @@
 }
 
 .PresentationLayout .container {
+  font-size: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* justify-items: center;
+  align-items: center; */
   position: relative;
   z-index: 100;
-  width: 100%;
-  padding-top: 75px;
-  height: 100%;
+
+  width: 85%;
+  height: calc(100vh - 170px);
+  margin: 85px auto;
+
   background-color: #fff;
-  width: 50%;
-  height: 50vh;
-  margin: 150px auto;
 }
+
+.slider_wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_wrapper {
+  overflow-y: scroll;
+  scrollbar-color: var(--main-color) var(--first-analog-color); /* Белый бегунок и серый фон */
+  scrollbar-width: thin; /* Тонкий скроллбар */
+}
+
+/* Скрыть полосу прокрутки для всех элементов */
+.text_wrapper::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикального скроллбара */
+  height: 12px; /* Высота горизонтального скроллбара */
+}
+.text_wrapper::-webkit-scrollbar-thumb {
+  background: #8b2f2f; /* Серый фон для трека */
+}
+.text_wrapper::-webkit-scrollbar-track {
+  scrollbar-color: #fff #d3d3d3; /* Белый бегунок и серый фон */
+  scrollbar-width: thin; /* Тонкий скроллбар */
+}
+
 .PresentationLayout .close {
   font-size: 25px;
   position: fixed;
