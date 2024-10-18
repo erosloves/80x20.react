@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import css from "./page.module.css";
-import Link from "next/link";
+
 import Slider from "../components/slider";
-import Swiper from "swiper";
-import "swiper/css";
+
 export default function Page() {
   const [selectedId, setSelectedId] = useState(null);
   const [isPresentationLayout, setPresentationLayout] = useState(false);
@@ -52,14 +51,6 @@ const Card = ({ props, fx }) => {
     </div>
   );
 };
-
-const swiper = new Swiper(".swiper", {
-  direction: "horizontal",
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
 
 const PresentationLayout = ({ props, fx }) => {
   return (
