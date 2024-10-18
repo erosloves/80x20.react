@@ -1,0 +1,90 @@
+.main {
+  /* position: relative; */
+}
+.card_wrapper {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.card .title {
+  font-size: 35px;
+  z-index: 3;
+  text-align: center;
+  color: #eee;
+}
+
+.card_layout {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.616);
+}
+
+.card .img {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* PresentationLayout */
+
+.PresentationLayout {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.616);
+}
+
+.PresentationLayout .container {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  padding-top: 75px;
+  height: 100%;
+  background-color: #fff;
+  width: 50%;
+  height: 50vh;
+  margin: 150px auto;
+}
+.PresentationLayout .close {
+  font-size: 25px;
+  position: fixed;
+  z-index: 1050;
+  top: 85px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 130ms ease-in;
+  border-radius: 5px;
+  background-color: rgba(185, 185, 185, 0.482);
+}
+
+.PresentationLayout .close:hover {
+  background-color: rgba(158, 158, 158, 0.482);
+}
